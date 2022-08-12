@@ -24,7 +24,7 @@ void Load_Record(){
     GridView1.DataSource = dt;
     GridView1.DataBind();
 }
-protected void ButtonClick1(object sender, EventArgs e){
+protected void ButtonClick2(object sender, EventArgs e){
  con.Open();
   sqlCommand comm = new sqlCommand("Upadate MyDb SET Studentid = '"+int.Parse(TextBox1.Text)+"',StudentName = '"+TextBox2.Text+"', City = '"+DropDownList1.SelectedValue+"', College = '"+TextBox3.Text+"', Course =  '"+TextBox4.Text+"')", con);
  comm.ExecuteNonQuery();
@@ -34,7 +34,7 @@ protected void ButtonClick1(object sender, EventArgs e){
  Load_Record();
 }
 
-protected void ButtonClick1(object sender, EventArgs e){
+protected void ButtonClick3(object sender, EventArgs e){
  con.Open();
   sqlCommand comm = new sqlCommand("Delete from MyDb where Studentid = '"+int.Parse(TextBox1.Text)+"'", con);
  comm.ExecuteNonQuery();
@@ -44,8 +44,8 @@ protected void ButtonClick1(object sender, EventArgs e){
  Load_Record();
 }
 
-protected void ButtonClick1(object sender, EventArgs e){
- con.Open();
+protected void ButtonClick4(object sender, EventArgs e){
+ 
   sqlCommand comm = new sqlCommand("Select * from MyDb where Studentid ='"+int.Parse(TextBox1.Text)+"'", con );
     sqlAdapter d  = new sqlAdapter(comm);
     DataTable dt = new DataTable();
